@@ -2,7 +2,7 @@ class DoctorsController < ApplicationController
   before_action :set_doctor, except: [:index, :new, :create]
 
   def index
-    @doctors = Doctors.all
+    @doctors = Doctor.all
   end
 
   def show
@@ -18,7 +18,7 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      redirect_to @doctor
+      redirect_to doctors_path
     else
       render :new
     end

@@ -22,7 +22,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 # Use materialize for styling
 gem 'materialize-sass'
-
+gem "paperclip", "~> 5.0.0"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

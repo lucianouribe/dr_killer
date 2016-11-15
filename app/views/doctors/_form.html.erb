@@ -1,0 +1,11 @@
+<%= form_for doctor do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, required: true %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, required: true %>
+  <%= f.label :specialty %>
+  <%= f.text_field :specialty, required: true %>
+  <%= f.label :greedy %>
+  <%= f.select :greedy, ['Very', 'No'] %>
+  <%= f.submit %>
+<% end %>

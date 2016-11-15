@@ -1,2 +1,53 @@
-<h1>Doctors#show</h1>
-<p>Find me in app/views/doctors/show.html.erb</p>
+<div class="row">
+  <h1>Doctor: <%= @doctor.doctor_full_name %> </h1>
+  <h3>Specialty: <%= @doctor.specialty %> </h3>
+
+
+  <div class="col s12 m7">
+      <h2 class="header">Doctor: <%= @doctor.doctor_full_name %></h2>
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="http://lorempixel.com/100/190/nature/6">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <h3>Specialty: <%= @doctor.specialty %> </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  <% if @doctor.patients.any? %>
+    <h5>Patients</h5>
+    <ul>
+      <% @doctor.appointments.each do |da| %>
+        <li>
+          <div class="col s12 m4">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Appointment</span>
+                <p><strong>Patient:</strong> <%= da.patient.patient_full_name %> </p>
+                <p><strong>Date: </strong> <%= da.date.strftime('%b %e, %Y') %> </p>
+                <p><strong>Time: </strong> <%= da.time.strftime('%l:%M %P') %> </p>
+              </div>
+              <div class="card-action">
+                <%= link_to 'Cancel', appointment_path(da), method: :delete %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h5>No patients found</h5>
+  <% end %>
+</div>
+<div class="row">
+  <%= link_to 'All Doctors', doctors_path, class: 'btn' %>
+  <%= link_to 'Edit Doctor', edit_doctor_path(@doctor), class: 'btn' %>
+</div>

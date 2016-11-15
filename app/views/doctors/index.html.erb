@@ -1,2 +1,32 @@
-<h1>Doctors#index</h1>
-<p>Find me in app/views/doctors/index.html.erb</p>
+<h1>Doctors List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Specialty</th>
+      <th>Greedy?</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.first_name %></td>
+        <td><%= doctor.last_name %></td>
+        <td><%= doctor.specialty %></td>
+        <td><%= doctor.greedy ? 'Yes' : 'No'%></td>
+        <td><%= link_to 'Show', doctor %></td>
+        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
+        <td><%= link_to 'Delete', doctor, method: :delete, data: { confirm: 'Are you sure? Even if doctors dont look like, they have a soul too!' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+<%= link_to 'New Doctor', new_doctor_path %> |
+
+<%= link_to 'Add Patient To Doctor', new_appointment_path %>
