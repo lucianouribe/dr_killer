@@ -1,8 +1,18 @@
 class AppointmentsController < ApplicationController
   def new
+
     @doctors = Doctor.all.map { |r| [r.last_name, r.first_name, r.id] }
     @patients = Patient.all.map { |i| [i.last_name, i.first_name, i.id] }
-    @appointments = Appointment.new
+    if @doctors.any?
+      if @patients.any?
+        @appointments = Appointment.new
+      else
+        flash[:error] = 'No patients, you have to find sick people somewhere'
+        redirect_to new_patient_path
+      end
+    else
+      redirect_to new_doctor_path, error: "No doctors, you have to find at least one of them somewhere"
+    end
   end
 
   def create
