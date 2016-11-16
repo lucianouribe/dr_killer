@@ -3,8 +3,8 @@ class CreatePatients < ActiveRecord::Migration[5.0]
     create_table :patients do |t|
       t.string :first_name
       t.string :last_name
-      t.boolean :dying
-      t.boolean :insurance
+      t.boolean :dying, null: false
+      t.boolean :insurance, null: false
       t.string :complains_of
 
       t.timestamps

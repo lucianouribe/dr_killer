@@ -18,7 +18,7 @@
           <td><%= doctor.first_name %></td>
           <td><%= doctor.last_name %></td>
           <td><%= doctor.specialty %></td>
-          <td><%= doctor.greedy ? 'Yes' : 'No'%></td>
+          <td><%= doctor.greedy ? 'Very!' : 'Not Much'%></td>
           <td><%= link_to 'Show', doctor, class: 'btn' %></td>
           <td><%= link_to 'Edit', edit_doctor_path(doctor), class: 'btn' %></td>
           <td><%= link_to 'Delete', doctor, method: :delete, data: { confirm: 'Are you sure? Even if doctors dont look like, they have a soul too!' }, class: 'btn' %></td>

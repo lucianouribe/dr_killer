@@ -4,8 +4,8 @@ class CreateDoctors < ActiveRecord::Migration[5.0]
       t.string :first_name
       t.string :last_name
       t.string :specialty
-      t.boolean :greedy
-      
+      t.boolean :greedy, null: false
+
       t.timestamps
     end
   end

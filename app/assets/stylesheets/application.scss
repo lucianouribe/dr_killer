@@ -1,5 +1,8 @@
 @import 'materialize';
 
+.container {
+  width: 90%;
+}
 .btn {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -43,10 +46,22 @@
   border-bottom: 1px solid #4A735A;
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
   font-weight: 300;
 }
 
 .option_btn {
   margin-top: 40px;
+}
+
+.appointments_card {
+  background-color: #6F745B;
+  border-radius: 10px;
+}
+
+.card-action.appointments_card {
+  border: 1px solid #fff;
+}
+.doctor_card {
+  // border: 1px solid rgba(111, 116, 91, 0.1)
 }
