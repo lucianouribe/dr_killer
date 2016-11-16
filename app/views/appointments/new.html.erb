@@ -1,14 +1,17 @@
-<h1>Add an appointment</h1>
-<hr />
+<div class="container">
+  <h1>Add an appointment</h1>
+  <hr />
 
-<%= form_for Appointment.new do |f| %>
-  <%= f.select :doctor_id, options_for_select(@doctors) %>
-  <%= f.select :patient_id, options_for_select(@patients) %>
-  <%= f.date_field :date, required: true, placeholder: 'Date' %>
-  <%= f.time_field :time, required: true, placeholder: 'Time' %>
-  <%= f.submit nil, class: 'btn' %>
-<% end %>
+  <%= form_for Appointment.new do |f| %>
+    <%= f.select :doctor_id, options_for_select(@doctors) %>
+    <%= f.select :patient_id, options_for_select(@patients) %>
+    <%= f.date_field :date, required: true, placeholder: 'Date' %>
+    <%= f.time_field :time, required: true, placeholder: 'Time' %>
+    <%= f.submit nil, class: 'btn' %>
+  <% end %>
+</div>
 
-
-<%= link_to 'All Doctors', doctors_path %> |
-<%= link_to 'All Patients', patients_path %>
+<div class="center option_btn">
+  <%= link_to 'All Doctors', doctors_path, class: 'btn' %>
+  <%= link_to 'All Patients', patients_path, class: 'btn' %>
+</div>

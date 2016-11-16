@@ -1,3 +1,4 @@
+
 <%= form_for doctor do |f| %>
   <%= f.label :first_name %>
   <%= f.text_field :first_name, required: true %>
@@ -7,5 +8,6 @@
   <%= f.text_field :specialty, required: true %>
   <%= f.label :greedy %>
   <%= f.select :greedy, ['Very', 'No'] %>
-  <%= f.submit %>
+  <%= f.file_field :avatar %>
+  <%= f.submit 'Save', class: 'btn' %>
 <% end %>

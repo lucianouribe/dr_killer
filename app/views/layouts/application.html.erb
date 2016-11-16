@@ -4,6 +4,7 @@
     <title>DrKiller</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -12,12 +13,12 @@
   <body>
 
     <nav>
-      <div class="nav-wrapper black">
-        <a href="/" class="brand-logo yellow-text">You may not live too long hospital</a>
+      <div class="nav-wrapper nav_bar">
+        <a href="/" class="brand-logo navtitle">You may not live too long hospital</a>
         <a href="#" data-activates="mobile" class="button-collapse">
           <i class="material-icons">menu</i>
         </a>
-        <ul class="right hide-on-med-and-down black">
+        <ul class="right hide-on-med-and-down">
           <li> <%= link_to 'Doctors', doctors_path %> </li>
           <li> <%= link_to 'Patients', patients_path %> </li>
           <li> <%= link_to 'New Appointment', new_appointment_path %> </li>

@@ -7,7 +7,7 @@
       <h2 class="header">Doctor: <%= @doctor.doctor_full_name %></h2>
       <div class="card horizontal">
         <div class="card-image">
-          <img src="http://lorempixel.com/100/190/nature/6">
+          <%= image_tag @doctor.avatar.url(:medium), class: "activator" %>
         </div>
         <div class="card-stacked">
           <div class="card-content">
@@ -16,9 +16,6 @@
         </div>
       </div>
     </div>
-
-
-
 
 
 

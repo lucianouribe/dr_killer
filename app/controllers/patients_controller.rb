@@ -24,25 +24,25 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
 
     if @patient.save
-      redirect_to patients_path, notice: 'Patient was successfully created.'
+      redirect_to patients_path, success: 'Patient was successfully created.'
     else
-      render :new
+      render :new, error: 'Patient could not be created'
     end
   end
 
   # PATCH/PUT /patients/1
   def update
     if @patient.update(patient_params)
-      redirect_to patients_path, notice: 'Patient was successfully updated.'
+      redirect_to patients_path, success: 'Patient was successfully updated.'
     else
-      render :edit
+      render :edit, error: 'Something failed. Try again!'
     end
   end
 
   # DELETE /patients/1
   def destroy
     @patient.destroy
-    redirect_to patients_path, notice: 'Patient was successfully destroyed.'
+    redirect_to patients_path, success: 'Patient was successfully destroyed.'
   end
 
   private

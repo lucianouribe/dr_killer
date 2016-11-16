@@ -18,15 +18,15 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      redirect_to doctors_path
+      redirect_to doctors_path, success: "Doctor created successfully"
     else
-      render :new
+      render :new, error: "Try again!"
     end
   end
 
   def update
     if @doctor.update(doctor_params)
-      redirect_to @doctor
+      redirect_to @doctor, success: "Doctor updated successfully"
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class DoctorsController < ApplicationController
 
   def destroy
     @doctor.destroy
-    redirect_to doctors_url
+    redirect_to doctors_url, success: "Doctor deleted successfully"
   end
 
   private
@@ -44,6 +44,6 @@ class DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:first_name, :last_name, :specialty, :greedy)
+    params.require(:doctor).permit(:first_name, :last_name, :specialty, :greedy, :avatar)
   end
 end

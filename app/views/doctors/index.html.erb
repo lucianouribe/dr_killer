@@ -1,32 +1,36 @@
-<h1>Doctors List</h1>
+<div class="container">
+  <h1>Doctors List</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Last Name</th>
-      <th>Specialty</th>
-      <th>Greedy?</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @doctors.each do |doctor| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= doctor.first_name %></td>
-        <td><%= doctor.last_name %></td>
-        <td><%= doctor.specialty %></td>
-        <td><%= doctor.greedy ? 'Yes' : 'No'%></td>
-        <td><%= link_to 'Show', doctor %></td>
-        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-        <td><%= link_to 'Delete', doctor, method: :delete, data: { confirm: 'Are you sure? Even if doctors dont look like, they have a soul too!' } %></td>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Specialty</th>
+        <th>Greedy?</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br />
+    </thead>
 
-<%= link_to 'New Doctor', new_doctor_path %> |
+    <tbody>
+      <% @doctors.each do |doctor| %>
+        <tr>
+          <td><%= doctor.first_name %></td>
+          <td><%= doctor.last_name %></td>
+          <td><%= doctor.specialty %></td>
+          <td><%= doctor.greedy ? 'Yes' : 'No'%></td>
+          <td><%= link_to 'Show', doctor, class: 'btn' %></td>
+          <td><%= link_to 'Edit', edit_doctor_path(doctor), class: 'btn' %></td>
+          <td><%= link_to 'Delete', doctor, method: :delete, data: { confirm: 'Are you sure? Even if doctors dont look like, they have a soul too!' }, class: 'btn' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br />
+</div>
 
-<%= link_to 'Add Patient To Doctor', new_appointment_path %>
+<div class="center">
+  <%= link_to 'New Doctor', new_doctor_path, class: 'btn' %>
+
+  <%= link_to 'Add Patient To Doctor', new_appointment_path, class: 'btn' %>
+</div>
