@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20161116001721) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "specialty"
-    t.boolean  "greedy"
+    t.boolean  "greedy",              null: false
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20161116001721) do
   create_table "patients", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.boolean  "dying"
-    t.boolean  "insurance"
+    t.boolean  "dying",        null: false
+    t.boolean  "insurance",    null: false
     t.string   "complains_of"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
